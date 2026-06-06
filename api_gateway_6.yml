@@ -27,6 +27,7 @@ spring:
 logging:
   level:
     org.springframework.cloud.gateway: TRACE
+    org.springframework.web.servlet: TRACE
 
 management:
   endpoints:
