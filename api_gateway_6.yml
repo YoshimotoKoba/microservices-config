@@ -23,3 +23,7 @@ spring:
           uri: lb://ORDER_SERVICE_5
           predicates:
             - Path=/api/orders/**
+
+logging:
+  level:
+    org.springframework.cloud.gateway: TRACE
