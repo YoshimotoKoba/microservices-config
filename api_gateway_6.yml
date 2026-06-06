@@ -7,23 +7,29 @@ spring:
       discovery:
         locator:
           enabled: true
-
+          lower-case-service-id: true # Strongly recommended when using discovery locator
       routes:
         - id: auth-service
-          uri: lb://AUTH_SERVICE_3
+          uri: lb://AUTH-SERVICE
           predicates:
             - Path=/api/auth/**
 
         - id: user-service
-          uri: lb://USER_SERVICE_4
+          uri: lb://USER-SERVICE
           predicates:
             - Path=/api/users/**
 
         - id: order-service
-          uri: lb://ORDER_SERVICE_5
+          uri: lb://ORDER_SERVICE
           predicates:
             - Path=/api/orders/**
 
 logging:
   level:
     org.springframework.cloud.gateway: TRACE
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: gateway
