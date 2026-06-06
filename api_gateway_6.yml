@@ -15,7 +15,7 @@ spring:
             - Path=/api/auth/**
 
         - id: user-service
-          uri: lb://USER_SERVICE_4
+          uri: http://localhost:8082
           predicates:
             - Path=/api/users/**
 
