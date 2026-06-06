@@ -10,7 +10,7 @@ spring:
           lower-case-service-id: true # Strongly recommended when using discovery locator
       routes:
         - id: auth-service
-          uri: lb://AUTH_SSERVICE_3
+          uri: lb://AUTH_SERVICE_3
           predicates:
             - Path=/api/auth/**
 
